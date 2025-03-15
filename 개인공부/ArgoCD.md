@@ -89,7 +89,7 @@ A. 정답은 리소스도 같이 삭제된다.
 
 #  App of Apps
 : ArgoCD application을 그룹으로 관리하는 방법
-![[Pasted image 20250314161246.png]]
+![Pasted image 20250314161246](images/Pasted%20image%2020250314161246.png)
 
 📌예제
 ```json
