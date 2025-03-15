@@ -1,0 +1,214 @@
+{
+  "main": {
+    "id": "278caa5923aa5547",
+    "type": "split",
+    "children": [
+      {
+        "id": "5a62586e293399aa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9281ff65b449e081",
+            "type": "leaf",
+            "state": {
+              "type": "mk-space",
+              "state": {
+                "path": "개인공부"
+              },
+              "icon": "lucide-file",
+              "title": "개인공부"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "65f5e4ec2599fd23",
+    "type": "split",
+    "children": [
+      {
+        "id": "cbf57499d8c2c151",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3e79a65d9ed0367d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "0d0907234c992c2c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "북마크"
+            }
+          },
+          {
+            "id": "e8c22c00e3fa5ac8",
+            "type": "leaf",
+            "state": {
+              "type": "mk-path-view",
+              "state": {},
+              "icon": "layout-grid",
+              "title": "Navigator"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 220.50390625
+  },
+  "right": {
+    "id": "81f0c130f8417c52",
+    "type": "split",
+    "children": [
+      {
+        "id": "b8315b1c85fe9f2e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7884aeee95ffd9c0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "강의 내용 필기/2-2. 네트워크 실습(패킷트레이서).md",
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "2-2. 네트워크 실습(패킷트레이서) 의 백링크"
+            }
+          },
+          {
+            "id": "dd5d69eaf8323431",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "강의 내용 필기/2-2. 네트워크 실습(패킷트레이서).md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "2-2. 네트워크 실습(패킷트레이서) 의 나가는 링크"
+            }
+          },
+          {
+            "id": "64ffbed3fd8eea54",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "78a0f286abed8741",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "개요"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:빠른 전환기 열기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "e8c22c00e3fa5ac8",
+  "lastOpenFiles": [
+    "README.md",
+    "개인공부/ArgoCD.md",
+    "강의 내용 필기/1주차/설연휴 특강 - Github 강의.md",
+    "강의 내용 필기/1주차/설연휴 특강 - 웹 응용 강의.md",
+    "강의 내용 필기/1주차/image/image.md",
+    "개인공부/Helm 개념.md",
+    "images/Pasted image 20250315124253.md",
+    "Pasted image 20250315124253.md",
+    "개인공부/images/Pasted image 20250314161246.png",
+    "개인공부/images/Pasted image 20250315125407.png",
+    "개인공부/images/Pasted image 20250315124253.png",
+    "images",
+    "개인공부/Jenkins 개념.md",
+    "images/Pasted.md",
+    "개인공부/images",
+    "개인공부/Jenkins/Jenkins.md",
+    "Vault.md",
+    "강의 내용 필기/강의 내용 필기.md",
+    "개인공부/개인공부.md",
+    "강의 내용 필기/4주차/4주차.md",
+    "강의 내용 필기/4주차/1. 쿠버네티스 이론 강의.md",
+    "개인공부/Jenkins",
+    "개인공부",
+    "Pasted image 20250313015934.png",
+    "강의 내용 필기/4주차/무제 1.md",
+    "강의 내용 필기/4주차/무제.md",
+    "Pasted image 20250313015924.png",
+    "강의 내용 필기/4주차/0. k8s 과제.md",
+    "강의 내용 필기/4주차/Subnotes/Subnotes.md",
+    "강의 내용 필기/4주차/2. 쿠버네티스 실습.md",
+    "강의 내용 필기/5주차/1. AWS 보안.md",
+    "강의 내용 필기/4주차/1. 쿠버네티스 개념 정리.md",
+    "강의 내용 필기/4주차/images/Pasted image 20250312230746.png",
+    "강의 내용 필기/4주차/images/Pasted image 20250311114056.png",
+    "강의 내용 필기/4주차/images/Pasted image 20250311153425.png",
+    "강의 내용 필기/4주차/images/Pasted image 20250311153527.png",
+    "강의 내용 필기/4주차/images/Pasted image 20250312175942.png",
+    "강의 내용 필기/4주차/3. GitOps 운영(With. Github Actions & ArgoCD).md",
+    "강의 내용 필기/3주차/0. 도커 과제 - 3단계.md",
+    "강의 내용 필기/3주차/0. 도커 과제 - 5단계.md",
+    "강의 내용 필기/3주차/Subnotes",
+    "강의 내용 필기/4주차/Subnotes",
+    "Paper-like.json",
+    "Tags",
+    "해커톤",
+    "강의 내용 필기/5주차/images",
+    "강의 내용 필기/2주차/무제.canvas",
+    "무제.canvas",
+    "Untitled.canvas"
+  ]
+}

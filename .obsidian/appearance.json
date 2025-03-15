@@ -1,0 +1,13 @@
+{
+  "cssTheme": "Border",
+  "theme": "moonstone",
+  "accentColor": "#000000",
+  "textFontFamily": "MaruBuri",
+  "interfaceFontFamily": "",
+  "baseFontSize": 16,
+  "translucency": false,
+  "showViewHeader": true,
+  "showRibbon": false,
+  "enabledCssSnippets": [],
+  "nativeMenus": true
+}

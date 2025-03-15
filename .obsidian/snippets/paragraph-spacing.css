@@ -1,0 +1,11 @@
+/* 행간 조절 (소스 모드 & 미리보기 모드) */
+.markdown-source-view .cm-line,
+.markdown-preview-view p {
+  line-height: 1.5 !important;
+}
+
+/* 문단 간 간격 조절 */
+.markdown-source-view .cm-line:not(:first-child) {
+  padding-top: 0.5em !important;
+}
+1
