@@ -9,7 +9,7 @@
   "cacheIndex": true,
   "spacesRightSplit": false,
   "contextEnabled": true,
-  "spaceViewEnabled": true,
+  "spaceViewEnabled": false,
   "saveAllContextToFrontmatter": true,
   "autoOpenFileContext": false,
   "activeView": "/",
@@ -35,14 +35,15 @@
   "showRibbon": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
-    "//Tags",
-    "/",
     "//강의 내용 필기/강의 내용 필기/4주차/강의 내용 필기/4주차/하위 포스트",
-    "//개인공부",
     "//개인공부/개인공부/Jenkins",
     "//images",
+    "//Tags",
+    "//개인공부",
     "//강의 내용 필기",
-    "//강의 내용 필기/강의 내용 필기/5주차"
+    "//강의 내용 필기/강의 내용 필기/3주차/강의 내용 필기/3주차/Subnotes",
+    "/",
+    "//강의 내용 필기/강의 내용 필기/3주차"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
