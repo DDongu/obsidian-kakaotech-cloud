@@ -25,7 +25,7 @@ GitHub: Git 저장소의 호스팅을 지원하는 오픈소스 웹 서비스
 # 명령어
 
 **git 동작의 도식화**
-![[Pasted image 20250126203859.png]]
+![Pasted image 20250126203859](image/Pasted%20image%2020250126203859.png)
 
 **명령어**
 - git init: Working Directory를 생성하는 것
@@ -85,7 +85,7 @@ Merge의 네 종류
 병합할 두 branch와 공통의 조상 커밋을 이용하여 병합하는 커밋 방식
 - 공통 조상(base)를 기준으로 각 각의 브랜치에 새로 올라온 커밋을 하나로 합쳐, main에 새로운 병합 커밋을 올림.
 
-![[Pasted image 20250126235544.png]]
+![Pasted image 20250126235544](image/Pasted%20image%2020250126235544.png)
 **사용법**
 ```bash
 git merge
@@ -97,7 +97,7 @@ git merge —-no-ff
 ### fast-forward merge
 새로운 branch를 만들고 main 브랜치에 커밋이 없을 때, 만들어진 새 branch를 main으로 바꿔버리는 방식
 
-![[Pasted image 20250127000044.png]]
+![Pasted image 20250127000044](image/Pasted%20image%2020250127000044.png)
 
 **사용법**
 ```bash
@@ -119,7 +119,7 @@ git merge --ff-only  feature
 ### squash and merge
 새로 만든 branch를 그냥 없애버리고 main에 커밋을 새로 하나 올리는 방식
 
-![[스크린샷 2025-01-27 오전 12.00.54.png]]
+![스크린샷 2025-01-27 오전 12.00.54](image/스크린샷%202025-01-27%20오전%2012.00.54.png)
 
 **사용법**
 ```bash
@@ -134,7 +134,7 @@ git merge --squash feature
 ### rebase & merge
 새로운 branch의 commit을 다른 브랜치의 커밋으로 넣어버리는 방식
 - 그리고 새로운 branch의 마지막 커밋이 base가 됨(rebase 과정)
-![[스크린샷 2025-01-27 오전 12.01.03.png]]
+![스크린샷 2025-01-27 오전 12.01.03](image/스크린샷%202025-01-27%20오전%2012.01.03.png)
 
 **사용법**
 ```bash
@@ -211,7 +211,7 @@ git reset —mixed 커밋아이디
 
 # origin, upstream
 
-![[Pasted image 20250127124038.png]]
+![Pasted image 20250127124038](image/Pasted%20image%2020250127124038.png)
 fork를 할 때 쓰이는 개념으로, fork의 대상이 되는 레포를 upstream, fork해서 내 계정에 복사해온 레포를 origin이라고 함.
 
 여기서 `-u` 옵션은 `--set-upstream`의 약어로 push 할 원격저장소(upstream)를 설정함.

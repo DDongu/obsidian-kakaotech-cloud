@@ -1,7 +1,7 @@
 {
   "newNotePlaceholder": "Untitled",
   "defaultInitialization": false,
-  "navigatorEnabled": true,
+  "navigatorEnabled": false,
   "filePreviewOnHover": false,
   "blinkEnabled": true,
   "imageThumbnails": false,
@@ -39,11 +39,12 @@
     "//개인공부/개인공부/Jenkins",
     "//images",
     "//Tags",
-    "//개인공부",
     "//강의 내용 필기",
     "//강의 내용 필기/강의 내용 필기/3주차/강의 내용 필기/3주차/Subnotes",
     "/",
-    "//강의 내용 필기/강의 내용 필기/3주차"
+    "//강의 내용 필기/강의 내용 필기/4주차",
+    "//개인공부",
+    "//강의 내용 필기/강의 내용 필기/1주차"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
