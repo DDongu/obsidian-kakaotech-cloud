@@ -147,7 +147,7 @@ spec:
 > 
 
 
-## Helm Vaules Override
+## Helm Values Override
 : Helm 차트에서 `values.yaml`파일을 읽어 해당 파일의 값을 ArgoCD에서 변경하는 기능
 방법 1) ArgoCD GUI에서 하나하나 값을 고치는 방법
 방법 2) 별도록 명시되어 있는 values-example.yaml 과 같은 파일을 불러와 overriding 하는 방법

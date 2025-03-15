@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "개인공부/ArgoCD.md",
+                "file": "강의 내용 필기/5주차/0. AWS 과제.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ArgoCD"
+              "title": "0. AWS 과제"
             }
           }
         ]
@@ -58,7 +58,24 @@
             }
           },
           {
-            "id": "e8c22c00e3fa5ac8",
+            "id": "6bc26a2de99c2f8b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "검색"
+            }
+          },
+          {
+            "id": "fd2cc3c046e67caf",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -68,7 +85,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -164,15 +181,15 @@
   },
   "active": "a7d846d8c8e2b0dd",
   "lastOpenFiles": [
+    "개인공부/ArgoCD.md",
+    "강의 내용 필기/3주차/Subnotes/Subnotes.md",
     "강의 내용 필기/4주차/4주차.md",
     "강의 내용 필기/4주차/1. 쿠버네티스 이론 강의.md",
     "강의 내용 필기/4주차/0. k8s 과제.md",
     "강의 내용 필기/4주차/1. 쿠버네티스 개념 정리.md",
-    "강의 내용 필기/3주차/Subnotes/Subnotes.md",
     "강의 내용 필기/3주차/0. 도커 과제.md",
     "강의 내용 필기/3주차/Subnotes/0. 도커 과제 - 1단계.md",
     "강의 내용 필기/3주차/3주차.md",
-    "개인공부/ArgoCD.md",
     "개인공부/Helm 개념.md",
     "개인공부/Jenkins 개념.md",
     "강의 내용 필기/4주차/2. 쿠버네티스 실습.md",
