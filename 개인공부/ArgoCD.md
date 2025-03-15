@@ -31,7 +31,7 @@ ref: [ArgoCD 유튜브 강의](https://www.youtube.com/watch?v=cLgzqc_hwIg&t=23s
 : 동기화된 리소스 삭제 옵션.
 - git에서 리소스를 삭제할 떄, 해당 리소스를 쿠버네티스에서 삭제할지 유지할지 결정하는 옵션
 - ❗prune이 비활성화(default)되어 있으면, argocd에서 동기화 된 리소스는 git에서 삭제되더라고 k8s에서는 삭제되지 않고 남아있음
-## Directory Recurse옵션
+## Directory Recurse 옵션
 : git의 path를 지정했을 때, path 안에 다른 디렉터리가 있으면 그 디렉터리까지 다 반영하겠다는 옵션
 - 비활성화 시, path에 있는 `파일`만 반영하고 디렉터리는 반영 x
 ## Ignore Difference 
@@ -62,8 +62,8 @@ metadata:
     argocd.argoproj.io/hook: PostSync
 ```
 
-❗`argocd.argoproj.io/hook-delete-policy: HookSucceeded` 설정
-	Pre,PostSync는 job이다. 따라서 기본적으로는 수행 후에 남아있게 된다. 이때 위 설정을 넣어주게 되면 정책 수행 후 job이 삭제된다.
+>[!warning] ❗`argocd.argoproj.io/hook-delete-policy: HookSucceeded` 설정
+>Pre,PostSync는 job이다. 따라서 기본적으로는 수행 후에 남아있게 된다. 이때 위 설정을 넣어주게 되면 정책 수행 후 job이 삭제된다.
 
 💡 [ArcoCD github 기본 예제](https://github.com/argoproj/argocd-example-apps)
 
@@ -92,7 +92,7 @@ A. 정답은 리소스도 같이 삭제된다.
 ![Pasted image 20250314161246](images/Pasted%20image%2020250314161246.png)
 
 📌예제
-```json
+```
 apiVersion: argoproj.io/v1alpha1
 kind: Application                                 # Application으로 정의되어 있음
 metadata:
@@ -113,13 +113,66 @@ spec:
 => 해당 yaml 파일이 배포되게 되면 application이 올라오게 되고,  path에 해당되는 application이 생성됨
 (*Application -> Application을 가리키는 구조가 만들어짐*)
 
-💡어떻게 사용될까?
-```
-**Cluster Bootstrapping에 사용**
+>[!note] 💡어떻게 사용될까?
+>**Cluster Bootstrapping에 사용*
 => 새로운 클러스터를 생성할 때, 해당 패턴의 파일을 만들어둔 뒤 빠르게 생성하게 됨
 => ArgoCD user가 사용하기 보다, admin을 위한 방식임
-```
 
 ❗**주의**
 *App of Apps를 삭제하게 된다면, 위에서 말했던 이유처럼 연동되어 있는 application이 다 삭제되어 날릴 수 있음*
 
+
+# Helm Charts를 이용한 Source 설정
+## Helm 차트 저장소 이용
+
+>[!note] Helm 차트 저장소란❓
+> Helm 자체에서 제공하는 공식적인 방식으로, Helm 차트가 전용 **Helm Repository**(예: ChartMuseum, OCI Registry, Bitnami Helm Repo 등)에 저장되어 있을 때 사용하는 방법
+
+**사용방법**
+- SOURCE 탭에서 Repository URL의 드롭박스를 HELM으로 변경
+- 이때 Repository에는 Helm chart 저장소를 만들어 Github 등에 올려서 관리됨
+- 저장소에는 index.yaml를 통해 Helm 차트에 대한 목록과 버전을 명시해놓고, 이를 ArgoCD에서 자동으로 불러와짐. 그리고 불러와진 목록에서 원하는 Helm 차트를 선택하면 됨
+
+## Git에 있는 Helm 차트 이용
+
+>[!note] Git에 있는 Helm 차트❓
+> Helm 차트가 Helm Repository가 아니라 git repository의 특정 디렉터리에 저장되어 있는 경우를 말함
+
+> [!NOTE] **Helm Repository**와 **Git Repository에 있는 Helm 차트**의 차이
+> **Helm Repository**는 ChartMuseum, OCI Registry, Bitnami Helm Repo, Github 등 `index.yaml`과 `.tgz 패키지 파일`을 올려서 관리할 수 있는 저장소를 말함.(이때 `.tgz 파일`은 Helm 차트를 패키지화 한 것)
+> ∴ index.yaml에서 명시한 `chart`과와 `repoURL`을 통해 사용함
+> 
+> 하지만 **Git Repository**는 그냥 Git Repository에서 특정 디렉터리에 Helm 차트가 존재해, 그곳에 접근하는 것을 말함.
+> ∴ 디렉터리의 `path`와 `repoURL`을 통해 사용함
+> 
+
+
+## Helm Vaules Override
+: Helm 차트에서 `values.yaml`파일을 읽어 해당 파일의 값을 ArgoCD에서 변경하는 기능
+방법 1) ArgoCD GUI에서 하나하나 값을 고치는 방법
+방법 2) 별도록 명시되어 있는 values-example.yaml 과 같은 파일을 불러와 overriding 하는 방법
+
+## Helm 차트 이용 시 주의❗
+- 기본적으로 Helm 차트를 release 하는 방식과 달리, helm template의 렌더링 결과를 k8s에 배포하는 방식으로 사용됨
+
+❌ 기본 Helm 차트 release 방식
+```sh
+# 예시
+helm install my-nginx nginx
+```
+
+⭕ ArgoCD를 이용하는 Helm 차트 release 방식
+```sh
+# 예시
+helm template | kubectl apply -f
+```
+*∴ helm으로 release 한 것이 아니기 때문에, `helm ls`, `helm search` 등과 같은 helm 명령어를 사용할 수 없음*
+
+
+# Kustomize
+
+> [!info] **Kustomize**
+>  : Kubernetes 애플리케이션을 **템플릿 없이** 커스터마이징할 수 있도록 도와주는 도구
+- kustomize 파일이 있으면 ArgoCD 생성 과정에서 자동으로 인식
+- Kustomize에는 많은 옵션과 플러그인이 있음. 따라서 ArgoCD에서 이를 사용할 때 에러가 발생할 수 있음.
+- 이때는 argocd의 [kustomize 공식문서](https://argo-cd.readthedocs.io/en/stable/user-guide/kustomize/#kustomizing-helm-charts)를 통해서 해결하면 됨.

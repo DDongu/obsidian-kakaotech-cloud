@@ -38,10 +38,10 @@
     "//Tags",
     "/",
     "//강의 내용 필기/강의 내용 필기/4주차/강의 내용 필기/4주차/하위 포스트",
-    "//강의 내용 필기/강의 내용 필기/3주차/강의 내용 필기/3주차/Subnotes",
     "//개인공부",
     "//개인공부/개인공부/Jenkins",
-    "//images"
+    "//images",
+    "//강의 내용 필기"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
