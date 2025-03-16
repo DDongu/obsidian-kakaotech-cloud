@@ -121,7 +121,6 @@ spec:
 ❗**주의**
 *App of Apps를 삭제하게 된다면, 위에서 말했던 이유처럼 연동되어 있는 application이 다 삭제되어 날릴 수 있음*
 
-
 # Helm Charts를 이용한 Source 설정
 ## Helm 차트 저장소 이용
 
