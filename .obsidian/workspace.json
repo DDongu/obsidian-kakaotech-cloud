@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "강의 내용 필기/4주차/1. 쿠버네티스 이론 강의.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "1. 쿠버네티스 이론 강의"
             }
           }
         ]
@@ -58,24 +58,7 @@
             }
           },
           {
-            "id": "84b9889aeb9f638b",
-            "type": "leaf",
-            "state": {
-              "type": "search",
-              "state": {
-                "query": "",
-                "matchingCase": false,
-                "explainSearch": false,
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-search",
-              "title": "검색"
-            }
-          },
-          {
-            "id": "64883eca116c85d5",
+            "id": "d1c2f105c17bdb13",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -85,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -151,16 +134,37 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "강의 내용 필기/4주차/1. 쿠버네티스 이론 강의.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "개요"
+              "title": "1. 쿠버네티스 이론 강의 의 개요"
+            }
+          },
+          {
+            "id": "b290f6cfa847ac2f",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          },
+          {
+            "id": "d7f0229f3af4babf",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -181,6 +185,7 @@
   },
   "active": "d4c65cfb3fa01dbc",
   "lastOpenFiles": [
+    "README.md",
     "개인공부/ArgoCD 개념.md",
     "개인공부/Helm 개념.md",
     "강의 내용 필기/3주차/3. GitLab & GitLab runner 실습.md",
@@ -206,7 +211,6 @@
     "강의 내용 필기/2주차/0. 딥다이브.md",
     "강의 내용 필기/2주차/4. 네트워크 구성도 설계(구축 실패..).md",
     "강의 내용 필기/2주차/3. 네트워크 보안.md",
-    "강의 내용 필기/2주차/2. 패킷트레이서 실습.md",
     "강의 내용 필기/3주차/image/Pasted image 20250210152438.png",
     "개인공부/images/Pasted image 20250314161246.png",
     "개인공부/images/Pasted image 20250315125407.png",
