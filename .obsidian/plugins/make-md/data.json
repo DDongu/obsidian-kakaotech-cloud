@@ -42,7 +42,8 @@
     "//강의 내용 필기",
     "/",
     "//개인공부",
-    "//강의 내용 필기/강의 내용 필기/6주차"
+    "//강의 내용 필기/강의 내용 필기/6주차",
+    "//강의 내용 필기/강의 내용 필기/6주차/강의 내용 필기/6주차/images"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
@@ -57,7 +58,6 @@
     "_blocks"
   ],
   "newFileLocation": "current",
-  "newFileFolderPath": "",
   "inlineBacklinks": false,
   "inlineContext": true,
   "inlineBacklinksExpanded": false,
