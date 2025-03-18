@@ -89,7 +89,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 215.5
+    "width": 215.5,
+    "collapsed": true
   },
   "right": {
     "id": "81f0c130f8417c52",
@@ -202,6 +203,10 @@
   },
   "active": "f07113573b1eeda5",
   "lastOpenFiles": [
+    "강의 내용 필기/6주차/images/Pasted image 20250318171716.png",
+    "강의 내용 필기/6주차/images/Pasted image 20250318164715.png",
+    "강의 내용 필기/6주차/images/Pasted image 20250318143107.png",
+    "강의 내용 필기/6주차/images/Pasted image 20250318143023.png",
     "강의 내용 필기/6주차/images/Pasted image 20250318132549.png",
     "강의 내용 필기/6주차/images/Pasted image 20250318132520.png",
     "강의 내용 필기/6주차/images/Pasted image 20250318132354.png",
@@ -237,14 +242,10 @@
     "강의 내용 필기/3주차/Subnotes/0. 도커 과제 - 2단계.md",
     "강의 내용 필기/4주차/0. k8s 과제.md",
     "강의 내용 필기/3주차/image/Pasted image 20250210152438.png",
-    "개인공부/images/Pasted image 20250314161246.png",
-    "개인공부/images/Pasted image 20250315125407.png",
-    "개인공부/images/Pasted image 20250315124253.png",
     "images",
     "개인공부/images",
     "개인공부/Jenkins",
     "개인공부",
-    "Pasted image 20250313015934.png",
     "강의 내용 필기/3주차/Subnotes",
     "강의 내용 필기/4주차/Subnotes",
     "Paper-like.json",
