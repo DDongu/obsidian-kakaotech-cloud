@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "강의 내용 필기/6주차/클라우드 프로그래밍 이론.md",
+                "file": "강의 내용 필기/6주차/Terraform 실습.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "클라우드 프로그래밍 이론"
+              "title": "Terraform 실습"
             }
           }
         ]
@@ -65,6 +65,23 @@
               "state": {},
               "icon": "layout-grid",
               "title": "Navigator"
+            }
+          },
+          {
+            "id": "643fbc84c3a046c5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "검색"
             }
           }
         ],
@@ -183,8 +200,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d1c2f105c17bdb13",
+  "active": "f07113573b1eeda5",
   "lastOpenFiles": [
+    "강의 내용 필기/6주차/images/Pasted image 20250318132549.png",
+    "강의 내용 필기/6주차/images/Pasted image 20250318132520.png",
+    "강의 내용 필기/6주차/images/Pasted image 20250318132354.png",
+    "강의 내용 필기/6주차/images/Pasted image 20250318132048.png",
+    "강의 내용 필기/6주차/images/Pasted image 20250318132012.png",
+    "강의 내용 필기/6주차/클라우드 프로그래밍 이론.md",
+    "강의 내용 필기/6주차/Terraform 실습.md",
     "강의 내용 필기/6주차/images/Pasted image 20250318104656.png",
     "강의 내용 필기/6주차/images",
     "강의 내용 필기/5주차/0. AWS 과제.md",
@@ -192,7 +216,6 @@
     "강의 내용 필기/5주차/1. AWS 보안.md",
     "강의 내용 필기/4주차/2. 쿠버네티스 실습.md",
     "강의 내용 필기/4주차/1. 쿠버네티스 이론 강의.md",
-    "강의 내용 필기/6주차/클라우드 프로그래밍 이론.md",
     "강의 내용 필기/ㄴㄷㄱㄹㄷㄱ",
     "강의 내용 필기/6주차/6주차.md",
     "강의 내용 필기/6주차",
@@ -213,7 +236,6 @@
     "강의 내용 필기/3주차/Subnotes/0. 도커 과제 - 3단계.md",
     "강의 내용 필기/3주차/Subnotes/0. 도커 과제 - 2단계.md",
     "강의 내용 필기/4주차/0. k8s 과제.md",
-    "강의 내용 필기/1주차/설연휴 특강 - 웹 응용 강의.md",
     "강의 내용 필기/3주차/image/Pasted image 20250210152438.png",
     "개인공부/images/Pasted image 20250314161246.png",
     "개인공부/images/Pasted image 20250315125407.png",
@@ -223,11 +245,6 @@
     "개인공부/Jenkins",
     "개인공부",
     "Pasted image 20250313015934.png",
-    "Pasted image 20250313015924.png",
-    "강의 내용 필기/4주차/images/Pasted image 20250312230746.png",
-    "강의 내용 필기/4주차/images/Pasted image 20250311114056.png",
-    "강의 내용 필기/4주차/images/Pasted image 20250311153425.png",
-    "강의 내용 필기/4주차/images/Pasted image 20250311153527.png",
     "강의 내용 필기/3주차/Subnotes",
     "강의 내용 필기/4주차/Subnotes",
     "Paper-like.json",
