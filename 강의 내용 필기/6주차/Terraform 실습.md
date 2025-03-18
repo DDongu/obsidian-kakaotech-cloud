@@ -227,6 +227,15 @@ variable "my_ip" {
   default = "0.0.0.0/0"
 }
 ```
+
+## outputs.tf
+```
+# 출력 변수 작성
+output "alb_dns_name" {
+  value = aws_lb.webserver_alb.dns_name
+  description = "The domain name of the load balancer"
+}
+```
 ## cluster.tf
 
 ### 보안 그룹 생성
@@ -269,12 +278,96 @@ resource "aws_autoscaling_group" "webserver_asg" {
 }
 ```
 
-
 > [!info] 특정 그룹에 해당하는 Subnet을 모두 넣으려면?
 > 
 > ![Pasted%20image%2020250318171716.png](images/Pasted%20image%2020250318171716.png)
-> => 다음과 같이 데이터 소스기능(`data`)을 통해 CSP에서 제공하는 읽기 전용 정보를 API로  가져오는 것이 가능. (아래 예제처럼 사용)
+> => 다음과 같이 데이터 소스기능(`data`)을 통해 CSP에서 제공하는 읽기 전용 정보를 API로  가져오는 것이 가능. (사진의 예제처럼 사용)
 
+## ALB 보안그룹
+```
+## ALB 보안그룹
+resource "aws_security_group" "alb_sg" {
+  name = var.alb_security_group_name
+  vpc_id = aws_vpc.my_vpc.id
+  
+  ingress {
+    from_port = var.server_port
+    to_port = var.server_port
+    protocol = "tcp"
+    cidr_blocks = [ var.my_ip ]
+  }
+  
+  egress {
+    from_port = 0                   # 모든 트래픽 허용
+    to_port = 0                     # 모든 트래픽 허용
+    protocol = "-1"                 # 모든 프로토콜 허용
+    cidr_blocks = [ "0.0.0.0/0" ]
+  }
+}
+```
 
+## ALB 설정
+```
+## ALB 설정
+resource "aws_lb" "webserver_alb" {
+  name = var.alb_name
+  load_balancer_type = "application"
+  subnets = [ aws_subnet.pub_sub_1.id, aws_subnet.pub_sub_2.id ]
+  security_groups = [ aws_security_group.alb_sg.id ]
+}
+```
 
-#
+## ALB 타겟 그룹
+```
+## ALB 타겟 그룹
+resource "aws_lb_target_group" "target_asg" {
+  name = var.alb_name
+  port = var.server_port
+  protocol = "HTTP"
+  vpc_id = aws_vpc.my_vpc.id
+  
+  health_check {
+    path = "/"
+    protocol = "HTTP"
+    matcher = "200"
+    interval = 15
+    timeout = 3
+    healthy_threshold = 2
+    unhealthy_threshold = 2
+  }
+}
+```
+
+## 리스너
+```
+## 리스너
+resource "aws_lb_listener" "http" {
+  load_balancer_arn = aws_lb.webserver_alb.arn
+  port = var.server_port
+  protocol = "HTTP"
+  
+  default_action {
+    type = "forward"
+    target_group_arn = aws_lb_target_group.target_asg.arn
+  }
+}
+```
+
+## 리스너 규칙 지정
+```
+## 리스너 규칙 지정
+resource "aws_lb_listener_rule" "webserver_asg_rule" {
+    listener_arn = aws_lb_listener.http.arn
+    priority = 100
+  
+    condition {
+        path_pattern {
+          values = ["*"]
+        }
+    }
+    action {
+        type = "forward"
+        target_group_arn = aws_lb_target_group.target_asg.arn
+    }
+}
+```
