@@ -4,6 +4,29 @@ tags:
   - terraform
   - 실습
 ---
+# 0. Terraform
+변수 생성
+```
+variable "instance_type" {
+	description = "EC2 인스턴스 타입"
+	default = "t.micro"
+}
+```
+
+변수 사용
+```
+resource "aws_instance" "example" {
+	instance_type = var.instance_type
+	# ...다른 설정들...
+}
+```
+
+변수 출력
+```
+output "instance_ip_address" {
+	value = aws_instance.example.public_ip
+}
+```
 # 1. Terraform 간단 실습
 
 1. 예제 1 
@@ -455,9 +478,9 @@ resource "aws_dynamodb_table" "terraform_lock" {
 ## 삭제 시 주의사항❗
 
 S3 버킷을 삭제하기 전에 해당 버킷의 모든 데이터를 삭제해야 됨
+=> 안비우고 삭제하면 오류남
+
 ```sh
-aws s3api delete-objects --bucket 001205-root-practice4 --delete "$(aws s3api list-object-versions --bucket 001205-root-practice4 --uery='{Objects: Versions[].{Key:Key, VersionId:VersionId}}' --output=json)"
-
-aws s3api delete-objects --bucket 001205-root-practice4 --delete "$(aws s3api list-object-versions --bucket 001205-root-practice4 --query '{Objects: Versions[].{Key:Key, VersionId:VersionId}}' --output json)"
-
+aws s3api delete-objects --bucket 001205-root-practice4 --delete "$(aws s3api list-object-versions --bucket 001205-root-practice4 --query='{Objects: Versions[].{Key:Key,VersionId:VersionId}}' --output=json)"
 ```
+=> 해당 명령어는 s3 버킷이 비어있으면 오류남
