@@ -4,7 +4,7 @@ tags:
   - terraform
   - 실습
 ---
-# Terraform 간단 실습
+# 1. Terraform 간단 실습
 
 1. 예제 1 
 ```tf
@@ -57,7 +57,7 @@ resource "aws_instance" "practice1" {
 terraform destroy
 ```
 
-# 여러 리소스를 정의 및 사용 방법
+# 2. 여러 리소스를 정의 및 사용 방법
 ```
 provider "aws" {
   region = "ap-northeast-2"
@@ -102,7 +102,7 @@ resource "aws_security_group" "webserver_sg" {
 
 *위 코드에서 `user_data`에 해당하는 코드가 잘못되어서 busybox에 접속할 수가 없음(테스트 불가)*
 
-# VPC 생성 방법
+# 3. VPC 생성 방법
 
 #### 생성된 VPC 리소스 맵
 ![결과 예상 이미지](images/Pasted%20image%2020250318164715.png)
@@ -206,12 +206,19 @@ resource "aws_nat_gateway" "nat_gw_1" {
 ```
 
 
-# 클러스터 구성 방법
+# 4. 클러스터 구성 방법
 
 **파일을 분리하여 코드 작성**
 `cluster.tf` -> 클러스터 구성 관련 코드
 `outputs.tf` -> 출력 변수 작성
 `variables.tf` -> 입력 변수 작성
+
+#### 클러스터 및 ALB 구축 후 모습
+![](images/Pasted%20image%2020250319102828.png)
+![](images/Pasted%20image%2020250319102849.png)
+
+![](images/Pasted%20image%2020250319102801.png)
+
 ## variables.tf
 ```
 # 입력 변수 작성
@@ -370,4 +377,87 @@ resource "aws_lb_listener_rule" "webserver_asg_rule" {
         target_group_arn = aws_lb_target_group.target_asg.arn
     }
 }
+```
+
+# 5. 공유 저장소를 이용한 상태파일 관리 방법
+
+![](images/Pasted%20image%2020250319110719.png)
+
+## 공유 저장소를 위한 S3 버킷 생성
+```
+# AWS를 사용하도록 AWS Provider 설정
+provider "aws" {
+  region = "ap-northeast-2"
+}
+
+# 공유 저장소를 위한 S3 버킷 생성
+resource "aws_s3_bucket" "terraform_state" {
+  bucket = "001205-root-practice4"
+}
+```
+  
+## 버전 관리를 통해 오래된 상태파일도 저장할 수 있도록 설정
+```
+# 오래된 상태파일(.tfstate)도 저장
+resource "aws_s3_bucket_versioning" "enabled" {
+  bucket = aws_s3_bucket.terraform_state.id # 관리할 버킷의 정보
+  versioning_configuration {        # 버전 관리를 활성화
+    status = "Enabled"
+  }
+}
+```
+  
+## S3 버킷 암호화
+```
+# S3 버킷의 내용을 서버 측 암호화(SSE)를 사용하여 암호화
+# => AWS에서 자동으로 데이터를 암호화하여 S3에 저장하게됨
+resource "aws_s3_bucket_server_side_encryption_configuration" "default_action" {
+  bucket = aws_s3_bucket.terraform_state.id
+  
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = "AES256"
+    }
+  }
+}
+```
+
+## S3 버킷에 대한 모든 공개 액세스 차단
+```
+# S3 버킷에 대한 모든 공개 액세스 차단
+# => Terraform state를 저장하는 원격 저장소에 Lock을 걸어, 여러 사용자가 사용할 때 충돌을 방지
+resource "aws_s3_bucket_public_access_block" "public" {
+  bucket = aws_s3_bucket.terraform_state.id
+  block_public_acls = true          # 버킷과 객체의 퍼블릭 ACL을 차단
+  block_public_policy = true        # 퍼블릭으로 설정된 S3 정책 적용을 방지
+  ignore_public_acls = true         # 기존에 설정된 퍼블릭 ACL을 무시하고 적용불가능하게 만듦
+  restrict_public_buckets = true    # 버킷이 퍼블릭 정책을 사용하지 못하도록 제한
+}
+```
+  
+## DynamoDB를 이용하여 상태파일을 Lock 처리
+❗Terraform state 충돌 방지를 위함
+```
+# DynamoDB를 이용하여 상태파일을 Lock 처리
+resource "aws_dynamodb_table" "terraform_lock" {
+  name = "001205-root-practice4"
+  billing_mode = "PAY_PER_REQUEST"  # 테이블의 과금 방식을 설정
+  hash_key = "LockID"               # 테이블의 기본 키로 사용될 속성
+  
+  attribute {                       # "LockID"라는 문자열(S) 타입의 속성을 기본 키로 설정
+    name = "LockID"
+    type = "S"
+  }
+}
+```
+
+
+## 삭제 시 주의사항❗
+
+S3 버킷을 삭제하기 전에 해당 버킷의 모든 데이터를 삭제해야 됨
+```sh
+aws s3api delete-objects --bucket 001205-root-practice4 --delete "$(aws s3api list-object-versions --bucket 001205-root-practice4 --uery='{Objects: Versions[].{Key:Key, VersionId:VersionId}}' --output=json)"
+
+aws s3api delete-objects --bucket 001205-root-practice4 --delete "$(aws s3api list-object-versions --bucket 001205-root-practice4 --query '{Objects: Versions[].{Key:Key, VersionId:VersionId}}' --output json)"
+
 ```
