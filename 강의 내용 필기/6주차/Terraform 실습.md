@@ -80,7 +80,7 @@ resource "aws_instance" "practice1" {
 terraform destroy
 ```
 
-# 2. 여러 리소스를 정의 및 사용 방법
+# 2. 변수 정의 및 여러 리소스 사용 방법
 ```
 provider "aws" {
   region = "ap-northeast-2"
