@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "강의 내용 필기/4주차/0. k8s 과제.md",
+                "file": "강의 내용 필기/6주차/개인프로젝트.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0. k8s 과제"
+              "title": "개인프로젝트"
             }
           }
         ]
@@ -173,8 +173,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3362e75d9d92eba8",
+  "active": "d1c2f105c17bdb13",
   "lastOpenFiles": [
+    "강의 내용 필기/4주차/0. k8s 과제.md",
     "강의 내용 필기/6주차/개인프로젝트.md",
     "강의 내용 필기/6주차/클라우드 프로그래밍 이론.md",
     "강의 내용 필기/6주차/images/Pasted image 20250319133347.png",
@@ -213,7 +214,6 @@
     "개인공부/Jenkins 개념.md",
     "강의 내용 필기/3주차/Subnotes/0. 도커 과제 - 1단계.md",
     "강의 내용 필기/3주차/Subnotes/0. 도커 과제 - 4단계.md",
-    "강의 내용 필기/3주차/Subnotes/0. 도커 과제 - 5단계.md",
     "images",
     "개인공부/images",
     "개인공부/Jenkins",
