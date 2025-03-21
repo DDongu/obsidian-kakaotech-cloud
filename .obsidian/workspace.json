@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "강의 내용 필기/6주차/클라우드 프로그래밍 이론.md",
+                "file": "강의 내용 필기/6주차/개인프로젝트.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "클라우드 프로그래밍 이론"
+              "title": "개인프로젝트"
             }
           },
           {
@@ -203,11 +203,11 @@
   },
   "active": "3362e75d9d92eba8",
   "lastOpenFiles": [
+    "강의 내용 필기/6주차/클라우드 프로그래밍 이론.md",
     "강의 내용 필기/6주차/Terraform 실습.md",
     "강의 내용 필기/6주차/개인프로젝트.md",
     "강의 내용 필기/5주차/0. AWS 과제.md",
     "강의 내용 필기/4주차/0. k8s 과제.md",
-    "강의 내용 필기/6주차/클라우드 프로그래밍 이론.md",
     "강의 내용 필기/6주차/images/Pasted image 20250319133347.png",
     "강의 내용 필기/6주차/.md",
     "강의 내용 필기/6주차/images/Pasted image 20250319110719.png",
